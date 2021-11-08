@@ -13,6 +13,14 @@
 - sudo sytemctl start nginx
 - sudo systemctl stop nginx
 - vagrant plugin install vagrant-hostsupdater: pluging adds an entry to /etc/hosts file on host system, need the hostname and :private network with fixed IP address
+
+## Automate with provision file
+
+- Create file with instructions required
+	-[provision.sh]()
+- sudo chmod +x provision.sh
+	- change permisions to allow execution of provison.sh
+- sudo ./provision.sh
 ## Advantages of vagrant
 
 - There are numerous benefits to using Vagrant to set up our development environment.
@@ -20,4 +28,5 @@
 	- Vagrant makes resetting our development environment v. easy. This makes it easy to set up a new computer/ recover if something is broken.
 	- Reduces “it works on my computer” excuses for bugs. Using a common setup => can be sure we’re using the same versions of packages
 	- Provides the “glue” that makes it easier to develop our code such as setting up a shared directory between the host and the guest VM. 
-		- Allows us to use GUI applications without having to jump through extra hoops.
+		- Allows us to use GUI applications without having to jump through 
+extra hoops.
