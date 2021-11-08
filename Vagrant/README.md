@@ -1,5 +1,5 @@
 # Vagrant
--
+- Vagrant is a tool for building and managing virtual machine environments in a single workflow
 ![](../images/dev-env.png)
 ## Commands
 - vagrant up: reads Vagrant and sets up a virtual machine (VM) according to information in file (e.g Ubuntu version 16.04.7 VM)
