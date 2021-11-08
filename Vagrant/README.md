@@ -17,7 +17,7 @@
 ## Automate with provision file
 
 - Create file with instructions required
-	-[provision.sh]()
+	-[provision.sh](https://github.com/jaydeegbobeh/Devops-Bootcamp/blob/main/Vagrant/provision.sh)
 - sudo chmod +x provision.sh
 	- change permisions to allow execution of provison.sh
 - sudo ./provision.sh
