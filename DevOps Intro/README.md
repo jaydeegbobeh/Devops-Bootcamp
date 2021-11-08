@@ -1,5 +1,6 @@
 # DevOps Intro
 DevOps = Dev (development) + Ops (operations)
+![](../images/devops_loop.webp)
 ## Life before DevOps
 - Separate departments worked on different sides of a project
 - Developers planned, designed and built the system before passing it over to the operations team for testing and implementation
