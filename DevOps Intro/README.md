@@ -3,4 +3,4 @@
 ## Life before DevOps
 ## Why DevOps
 ## Key pillars of DevOps
-## Monolith
+## Monolith Architecture
