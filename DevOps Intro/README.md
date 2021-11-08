@@ -23,5 +23,12 @@ DevOps = Dev (development) + Ops (operations)
 5. Work as one team
 6. Monitor and test everything
 
+## Stages in DevOps Lifecycle
+- Continuous Development
+- Continuous Testing
+- Continuous Integration
+- Continuous Deployment
+- Continuous Monitoring
+
 ## Monolith Architecture
 Traditional unified model for the design of a software program, software is composed all in one piece.
