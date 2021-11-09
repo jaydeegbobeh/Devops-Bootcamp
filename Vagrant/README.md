@@ -123,7 +123,17 @@ end
 - Automate tasks (provisioning)
 - Portable: VM, Container (push to DockerHub)
 - Deploy Nodejs app with Mongodb using the Monolith Architecture
+	- One env for each
+- IDE to develop code: VS Code, Atom, Sublime
 
+**Information required from Dev Team**
+- What versions, dependencies, packages
+- The best IDE to use
+- What tests to run: testing framework
+- Which OS
+- What are their expectations? What will the app look like when it's working
+- Env tests written in Ruby
+ 
 ## Why use Vagrant for development?
 
 - There are numerous benefits to using Vagrant to set up our development environment.
@@ -134,5 +144,3 @@ end
 		- Allows us to use GUI applications without having to jump through 
 extra hoops.
 
-
-##
