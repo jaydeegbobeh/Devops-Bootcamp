@@ -60,6 +60,8 @@ sudo apt-get upgrade -y
 sudo apt-get install nginx -y
 
 # load nginx on 192.168.10.100
+
+end
 ```
 3. sudo chmod +x provision.sh
 	- change permisions to allow execution of provison.sh
@@ -112,7 +114,17 @@ config.vm.provision "shell", path: "./Vagrant/provision.sh", run: 'always'
 
 end
 ```
-## Advantages of vagrant
+## What to consider when creating a Dev environment
+
+- Why is it needed? What are we planning to develop?
+- The team
+- Standardised: we selected the same Linux box close to production
+- Robust
+- Automate tasks (provisioning)
+- Portable: VM, Container (push to DockerHub)
+- Deploy Nodejs app with Mongodb using the Monolith Architecture
+
+## Why use Vagrant for development?
 
 - There are numerous benefits to using Vagrant to set up our development environment.
 
@@ -121,3 +133,6 @@ end
 	- Provides the “glue” that makes it easier to develop our code such as setting up a shared directory between the host and the guest VM. 
 		- Allows us to use GUI applications without having to jump through 
 extra hoops.
+
+
+##
