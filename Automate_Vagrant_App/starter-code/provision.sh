@@ -22,7 +22,7 @@ sudo npm install pm2 -g
 
 # bashrc
 
-sudo echo 'export DB_HOST="mongodb://192.168.10.150:27017/posts"' >> .bashrc 
+sudo echo 'export DB_HOST="mongodb://192.168.10.150:27017/posts"' >> ~/.bashrc 
 source ~/.bashrc
 
 # reverse proxy
