@@ -1,0 +1,37 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "Mongodb" do |db|
+    db.vm.box = "ubuntu/xenial64"
+    
+  
+    # assign private ip to our VM for DB
+    db.vm.network "private_network", ip: "192.168.10.150"
+    db.vm.synced_folder ".", "/home/vagrant/app"
+    db.vm.provision "shell", path: "./provision_db.sh", run: 'always'
+  
+    end
+    
+  config.vm.define "Node-app" do |napp|
+
+  napp.vm.box = "ubuntu/xenial64"
+  # creating a virtual machine ubuntu
+
+  # assign private ip to our VM
+  napp.vm.network "private_network", ip: "192.168.10.100"
+
+  # alias for private ip
+  # ensure to install hostsupdater before rerunning vagrant
+  napp.hostsupdater.aliases = ["development.local"]
+
+  # Sync folder from OS to Vm
+  napp.vm.synced_folder ".", "/home/vagrant/app"
+
+
+  # automate execution of provision.sh
+  napp.vm.provision "shell", path: "./provision.sh", run: 'always'
+
+  end
+
+
+
+end  
+

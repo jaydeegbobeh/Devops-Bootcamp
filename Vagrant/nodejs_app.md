@@ -15,6 +15,6 @@
 3. Run rake spec, tests should now all pass
 4. cd into app/app
    - npm install
-   - npm start
+   - npm start or pm2 start npm -- start
 5. App is now ready and listening at port 3000
 
