@@ -80,6 +80,6 @@ The AWS Cloud spans 81 Availability Zones within 25 geographic regions around th
     - HTTP, TCP, 80
     - App, TCP, 3000
 5. Connect to instance
-    - Add private key file to ~/.ssh
-    - chmod 400 privatekey
-    - Connect to instance using ssh -i
+    - Add private key file to `~/.ssh`
+    - `chmod 400 privatekey`
+    - Connect to instance using `ssh -i`
