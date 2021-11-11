@@ -132,7 +132,7 @@ net:
     - sudo apt-get install mongodb-org=3.2.20 -y
     - sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
     - sudo systemctl restart mongod
-    - sudo system ctl enable mongod
+    - sudo systemctl enable mongod
 - **SSH back into app instance**
 4. Go back to app instance `sudo echo 'export DB_HOST="mongodb://ip:27017/posts"' >> ~/.bashrc`
     - source ~/.bashrc
