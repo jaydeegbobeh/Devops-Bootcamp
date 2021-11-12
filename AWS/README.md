@@ -66,7 +66,8 @@ The AWS Cloud spans 81 Availability Zones within 25 geographic regions around th
     - A messaging service for both application-to-application and application-to-person communication
 - Simple Que Service `SQS`
     - message queing service that allows you to decouple and scale microservices, distributed systems and serverless apps
-- Load Balancers `LB` - `ALB` - `ELB`- `NLB`
+- Load Balancers `LB` - `ALB` - `ELB`- `NLB`: The load balancer distributes incoming traffic across multiple targets, e.g Amazon EC2 instances. Increases the availability of your application. Add one or more listeners to your load balancer. A load balancer distributes incoming app traffic across multiple EC2 instances in multiple Availability Zones - increases the fault tolerance of your applications.
+
     - `ALB`: Application Load Balancer, operates at the request level (layer 7), routing traffic to targets- EC2 instances, containers, IP adds, based on the content of request.
         - Ideal for advanced load balancing of HTTP and HTTPS traffic.
     - `ELB`: Elastic Load Balancing, automatically distributes incoming application traffic accross multiple targets and virtual apps in one or more AZs
@@ -101,19 +102,19 @@ The AWS Cloud spans 81 Availability Zones within 25 geographic regions around th
     - install node correct verison
     - install required dependencies
     - `app code` currently available on `local host` => must migrate it to cloud
-        - scp -i ./key.pem -r /local/host/path/ name@ipv4.compute.amazonaws.com:/instance/path/
-    - npm install
-    - npm start
+        - `scp -i ./key.pem -r /local/host/path/ name@ipv4.compute.amazonaws.com:/instance/path/`
+    - `npm install`
+    - `npm start`
     - Reverse proxy
-        - sudo rm -rf /etc/nginx/sites-available/default
-        - sudo mv ./edited_default_file /etc/nginx/sites-available/
-        - sudo systemctl restart
-        - sudo systemctl enable nginx
-        - sudo systemctl status nginx
-        - npm start
+        - `sudo rm -rf /etc/nginx/sites-available/default`
+        - `sudo mv ./edited_default_file /etc/nginx/sites-available/`
+        - `sudo systemctl restart`
+        - `sudo systemctl enable nginx`
+        - `sudo systemctl status nginx`
+        - `npm start`
         - access IP address without :3000 
 
-## Building an EC2 instance for Mongodb
+## Building an EC2 instance for Mongodb - pseudo coding
 
 1. Build EC2 instance as shown above
     - SSH 22 and port 27017 for security group
@@ -125,16 +126,29 @@ net:
   bindIp: 0.0.0.0
   ```
 3. 
-    - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
-    - echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-    - sudo apt-get update -y
-    - sudo apt-get upgrade -y
-    - sudo apt-get install mongodb-org=3.2.20 -y
-    - sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
-    - sudo systemctl restart mongod
-    - sudo systemctl enable mongod
+    - `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927`
+    - `echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list`
+    - `sudo apt-get update -y`
+    - `sudo apt-get upgrade -y`
+    - `sudo apt-get install mongodb-org=3.2.20 -y`
+    - `sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20`
+    - `sudo systemctl restart mongod`
+    - `sudo systemctl enable mongod`
 - **SSH back into app instance**
 4. Go back to app instance `sudo echo 'export DB_HOST="mongodb://ip:27017/posts"' >> ~/.bashrc`
-    - source ~/.bashrc
-5. node app/app/seeds/seed.js
-6. npm start
+    - `source ~/.bashrc`
+5. `node app/app/seeds/seed.js`
+6. `npm start`
+
+
+## Amazon Machine AMI
+- Which OS, distro version
+- Dependencies
+- VPC Networking - SG - or Rules
+- If you save the AMI of your instance it means you can easily relaunch it at anytime
+
+### Create an AMI
+- Select the instance you wish to create an image of > Actions > Image and templates > Create an image > Launch 
+- t2 microservice
+- Select storage
+- Select SG 
