@@ -70,7 +70,7 @@ node app/app/seeds/seed.js
 cd /home/vagrant/app/app
 sudo npm install
 sudo npm install express
-node seeds/seed.js
+
 
 
 
@@ -113,7 +113,7 @@ sudo apt-get upgrade -y
 # sudo apt-get install mongodb-org=3.2.20 -y
 sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
 sudo systemctl restart mongod
-sudo system ctl enable mongod
+sudo systemctl enable mongod
 
 # mongod.conf
 sudo rm -rf /etc/mongod.conf
@@ -126,7 +126,7 @@ sudo systemctl enable mongod
 ```
 - set up an env var once the db is up - in provison.sh file
 ```
-sudo echo 'export DB_HOST="mongodb://192.168.10.150:27017/posts"' >> .bashrc
+sudo echo 'export DB_HOST="mongodb://192.168.10.150:27017/posts"' >> ~/.bashrc
 ```
 
 - add dependencies in .gitignore
