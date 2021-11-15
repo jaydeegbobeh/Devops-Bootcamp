@@ -153,7 +153,26 @@ net:
 - Select storage
 - Select SG 
 
-## Enabled detailed monitoring
+## Monitioring
+- What you monitor depends on the architecture: What resources? How often we monitor? What tools perform there tasks? Who performs? Who should be notified in an emergency? What action should be taken?
+- Application server -EC2
+- CPU utilisation, %
+- Number of requests - response time - latency 
+- Firewall
+
+### Four Golden Signals of Monitoring
+- **Latency**: time it takes to service a request e.g HTTP 500 error trigered due to loss of connection to a database
+- **Traffic**: measure of how much demand is being placed on your system e.g HTTP requests sec<sup>-1</sup>
+- **Errors**: rate of requests that fail, HTTP 500s or HTTP 200 auccess response coupled with wrong content, is your system failing?
+- **Saturation**: how 'full' your service is, measure of your system fraction - shows what resources are most constrained (e.g CPU, memory)
+
+### Actions to be taken when alarm goes off/ notification is sent
+- Lambda: automatically monitors Lambda functions on your before and reports metrics through Amazon CloudWatch 
+- SQS: message queing service that enables you to decouple and scale microservices, distrobuted systems and serverless apps. SQS and CloudWatch are integrated so you can use CloudWatch to view/ analyse metrics 
+- HTTP/S
+- Email
+- SMS
+### Enabled detailed monitoring
 To enable detailed monitoring for an existing instance:
 
 1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
@@ -166,3 +185,13 @@ To enable detailed monitoring for an existing instance:
 
 5. Choose Save.
 
+### Automate the processes
+- Application Load Balancer (ALB)
+- Autoscaling Group
+- Launch template config: how many instances we would like to run at all times
+    - e.g 2 instances provide min=2 and max=3
+- Policies of scaling out - and scaling in to meet minimum instances
+-  Scaling or Demand?
+    - Scaling up vs scaling out
+    - Scaling up: increasing the size of your instance
+    - Scaling out: adding more components (instances) in parallel to spread out a load
