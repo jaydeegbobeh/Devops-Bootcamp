@@ -154,6 +154,7 @@ net:
 - Select SG 
 
 ## Monitioring
+![](../images/Monitoring_Diagram.png)
 - What you monitor depends on the architecture: What resources? How often we monitor? What tools perform there tasks? Who performs? Who should be notified in an emergency? What action should be taken?
 - Application server -EC2
 - CPU utilisation, %
