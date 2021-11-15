@@ -215,7 +215,22 @@ To enable detailed monitoring for an existing instance:
 - CLI: `sudo pip install awscli`
 - `aws configure`, enter your access key, secret key, defualt region name: `eu-west-1`, default output format: `json`
 - S3 access through our IAM role/account
-- CRUD: Create - Read - Update - Delete
+- **CRUD: Create (Bucket) - Read - Update - Delete**
+- Create a bucket `aws s3 mb s3://bucket-name` OR specify region `s3 mb s3://bucket-name --region eu-west-2`
+- Upload file from machine to bucket:
+    - create file `vi test.md`
+    - `aws s3 cp test.md s3://bucket-name/`
+- Copy file from bucket to machine:
+    - `aws s3 cp s3://bucket-name/test.md ./`
+    - `aws s3 sync s3://bucket-name/test.md ./`
+- Delete bucket
+    - Delete file `aws s3 rm s3://bucket-name/test.md`
+    - Delete bucket `aws s3 rb s3://bucket-name --recursive` OR `aws s3api delete-bucket --bucket bucket-name`
+
+
+    
+
+
 
 
 ## AWS S3, Simple Storage Service
@@ -227,4 +242,6 @@ To enable detailed monitoring for an existing instance:
 - S3 Storage classes:
     - S3 Standard- high durability, performance object storage for frequently accessed data. Delivers low latency and high throughput (rate at which something is processed). Can be used for cloud apps, mobile/gaming apps
     - S3 Glacier- secure, durable, low-cost storage class for data archiving.
+
+
 
