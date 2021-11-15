@@ -152,3 +152,17 @@ net:
 - t2 microservice
 - Select storage
 - Select SG 
+
+## Enabled detailed monitoring
+To enable detailed monitoring for an existing instance:
+
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+2. In the navigation pane, choose Instances.
+
+3. Select the instance and choose Actions, Monitoring, Manage detailed monitoring.
+
+4. On the Detailed monitoring detail page, for Detailed monitoring, select the Enable check box.
+
+5. Choose Save.
+
