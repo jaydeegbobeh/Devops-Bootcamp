@@ -196,3 +196,35 @@ To enable detailed monitoring for an existing instance:
     - Scaling up vs scaling out
     - Scaling up: increasing the size of your instance
     - Scaling out: adding more components (instances) in parallel to spread out a load
+
+## AWS CLI, Command Line Interface
+- A unified tool to manage your AWS services.
+- With just one tool to download/ configure.
+- Possible to control multiple AWS services from the command lie and automate them through scripts
+
+### To create AWS CLI:
+- AWS access and secret keys
+- Update/upgrade: 
+    - `sudo apt-get update -y` 
+    - `sudo apt-get upgrade -y`
+- Dependencies: python 3 
+    -`sudo apt-get install python`
+    - `sudo apt-get install python-pip`
+    - `sudo apt-get install python3-pip -y` 
+    - `alias python=python3`
+- CLI: `sudo pip install awscli`
+- `aws configure`, enter your access key, secret key, defualt region name: `eu-west-1`, default output format: `json`
+- S3 access through our IAM role/account
+- CRUD: Create - Read - Update - Delete
+
+
+## AWS S3, Simple Storage Service
+- Storage sevice, built to store and retrieve any amount of data, anytime, anywhere on the web
+- Bucket: container for objects stored in S3
+- Object: entities that is stored in S3 bucket, consits of object data/ metadata
+- Key: unique identifier for object within bucket
+- Attach a S3 sevrer to an EC2 instance so that if we ever destroy the instance all the data will be saved.
+- S3 Storage classes:
+    - S3 Standard- high durability, performance object storage for frequently accessed data. Delivers low latency and high throughput (rate at which something is processed). Can be used for cloud apps, mobile/gaming apps
+    - S3 Glacier- secure, durable, low-cost storage class for data archiving.
+
