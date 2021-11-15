@@ -1,6 +1,6 @@
 import logging
 import boto3
-from bootcore.exceptions import ClientError
+from bootcore.exceptions import Client Error
 
 
 def create_bucket(bucket_name, region=None):
@@ -37,6 +37,7 @@ def upload_from_bucket(bucket_name, file_name, object_name=None):
     s3 = boto3.client('s3')
     s3.download_file(bucket_name, file_name, object_name)
 
-bucket_name = "devops-jaydee-bucket-test"
-region = "eu-west-1"
-create_bucket(bucket_name, region)
+bucket = "devops-jaydee-bucket-test2"
+file_name = "./test.md"
+upload_to_bucket(file_name, bucket, object_name)
+
