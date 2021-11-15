@@ -227,12 +227,6 @@ To enable detailed monitoring for an existing instance:
     - Delete file `aws s3 rm s3://bucket-name/test.md`
     - Delete bucket `aws s3 rb s3://bucket-name --recursive` OR `aws s3api delete-bucket --bucket bucket-name`
 
-
-    
-
-
-
-
 ## AWS S3, Simple Storage Service
 - Storage sevice, built to store and retrieve any amount of data, anytime, anywhere on the web
 - Bucket: container for objects stored in S3
@@ -243,5 +237,33 @@ To enable detailed monitoring for an existing instance:
     - S3 Standard- high durability, performance object storage for frequently accessed data. Delivers low latency and high throughput (rate at which something is processed). Can be used for cloud apps, mobile/gaming apps
     - S3 Glacier- secure, durable, low-cost storage class for data archiving.
 
+## S3 Task
+- s3_env
+## Autoscaling and Load Balancing
+### Application Load Balancer
+- Autoscaling automatically adjusts the amount of computational resources based on the server load
+- Load Balancing distributes traffic between EC2 instances so that no one instance gets overwhelmed
+**Requirements**
+- ASG: Launch template or launch configuration
+- ALB: Target group HTTP 80
+- AWS keys
+- VCPC - Subnets - SG
+- Type of instance
+- AMI-id
+- EBS storage
+**Highly Available in Multiple AZs**
+- eu-west-1 (Ireland) instance
+- eu-west-2 (London) instance
+- eu-west-3 (Paris) instance
 
-
+### Autoscalling group to lauch Node app
+- Create template
+- User data: add script to update, upgrade, install dependencies
+- Create Autoscaling group 
+    - Choose launch template
+    - Choose instance launch options (vpc, availability - eu-west-1a, 1b, 1c)
+    - Load balancing: attach to new load balancer, application load balancer
+    - Enable group metrics
+    - Desired capacity:3, min cap:2, max cap:3
+    - Scaling policies: target tracking, CPU, target val:30
+    - Add SNS: JGbobeh_CPU_over30
