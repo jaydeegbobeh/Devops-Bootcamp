@@ -268,12 +268,39 @@ To enable detailed monitoring for an existing instance:
     - Desired capacity:3, min cap:2, max cap:3
     - Scaling policies: target tracking, CPU, target val:30
     - Add SNS
+    - Remember to add listeners as your application requires e.g port 3000
     
-## Virtual Private Cloud (VPC)
+## AWS Networking - Virtual Private Cloud (VPC)
 VPC is the networking layer for Amazon EC2 and enables launching AWS resources into a virtual network that you've defined.
 - An **internet gateway (IG)** (VPC component that allows communication between your VPC and the internet) must be attached to the vpc for internet availability inside this isolated virtual network
 - **Route table (RT)**: set of rules (routes)determines where network traffic is directed - routes to particular network destinations.
 - **Subnet (sn)**: the range of IP addresses in your VPC/ virtual network
 - VPC endpoints enables private connections between your VPC and AWS services e.g a S3 bucket (gateway)
 - **CIDR block**: how you define subnet mask, specify the range of IP addresses for the VPC
+
+### Create a VPC
+![](../images/VPC.png)
+1. VPC CIDR block 10.107.0.0/16
+2. Internet gateway
+    - Attach IG to VPC
+3. Create Route table:
+    - Allow CIDR block 
+    - Allow IG (0.0.0.0/16) - allow all
+4. Public subnet (10.107.1.0/24) for Node-app 3000
+    - In line with CIDR block
+    - Connect to VPC
+    - Private subnet 10.107.2.0/24 - Mongodb 27017
+5. Associate public subnet to our RT
+6. SG public and private w/ required rules for pub and private subnets
+
+
+Testing VPC config for public subnet and SG for app
+
+### NACL
+
+
+
+
+
+
 
