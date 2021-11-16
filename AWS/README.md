@@ -289,9 +289,16 @@ VPC is the networking layer for Amazon EC2 and enables launching AWS resources i
 4. Public subnet (10.107.1.0/24) for Node-app 3000
     - In line with CIDR block
     - Connect to VPC
-    - Private subnet 10.107.2.0/24 - Mongodb 27017
-5. Associate public subnet to our RT
-6. SG public and private w/ required rules for pub and private subnets
+    - Create sg, allows ssh (from my ip), port 3000 (listen), port 80 (reverse proxy)
+5. Private subnet 10.107.2.0/24 - Mongodb 27017
+    - Connect to VPC
+    - Create sg, allows ssh (from my ip), port 27017 (allows access from sg of node app)
+
+6. Associate public subnet to our RT
+7. SG public and private w/ required rules for pub and private subnets
+8. Create instances from AMIs for node app and db
+    - Remeber to use the vpc, sg groups you have created!
+    - When configuring the IP address of your db, use the private subnet IP: this makes sure your db server is **not publically accessible**
 
 
 Testing VPC config for public subnet and SG for app
