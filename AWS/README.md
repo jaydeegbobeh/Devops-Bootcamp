@@ -12,7 +12,6 @@ The delivery of computing service to offer faster innovation, flexible resources
 - McDonalds
 - Spotify
 
-
 ## Benefits of Using Cloud Computing
 - Reduced IT costs
 - Scalability
@@ -258,6 +257,8 @@ To enable detailed monitoring for an existing instance:
 
 ### Autoscalling group to lauch Node app
 - Create template
+- Select provide guidance
+- Chose your AMI for node, then DB
 - User data: add script to update, upgrade, install dependencies
 - Create Autoscaling group 
     - Choose launch template
@@ -266,4 +267,13 @@ To enable detailed monitoring for an existing instance:
     - Enable group metrics
     - Desired capacity:3, min cap:2, max cap:3
     - Scaling policies: target tracking, CPU, target val:30
-    - Add SNS: JGbobeh_CPU_over30
+    - Add SNS
+    
+## Virtual Private Cloud (VPC)
+VPC is the networking layer for Amazon EC2 and enables launching AWS resources into a virtual network that you've defined.
+- An **internet gateway (IG)** (VPC component that allows communication between your VPC and the internet) must be attached to the vpc for internet availability inside this isolated virtual network
+- **Route table (RT)**: set of rules (routes)determines where network traffic is directed - routes to particular network destinations.
+- **Subnet (sn)**: the range of IP addresses in your VPC/ virtual network
+- VPC endpoints enables private connections between your VPC and AWS services e.g a S3 bucket (gateway)
+- **CIDR block**: how you define subnet mask, specify the range of IP addresses for the VPC
+
