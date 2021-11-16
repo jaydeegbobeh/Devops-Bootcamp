@@ -30,11 +30,13 @@ The delivery of computing service to offer faster innovation, flexible resources
 
 ## AWS Global Infrastructure
 The AWS Cloud spans 81 Availability Zones within 25 geographic regions around the world.
+![](../images/aws-global-infr.PNG)
 ### Regions
 - AWS has several regions (physical location around the world where amazon clusters data centres) where you can create resources: each region has several availability zones (consists of one or more data centres at a location within an AWS region - each AZ has independent cooling, power and physical security
 - If app is partitioned accross AZs, companies are better isolated/ protected from power outages, natural disasters (AZs within a region are separated within 100km from each other)
 - Pick region (and AZ) thats geographically close to company/ customers:  lowest network latency and quickest response
 
+![](../images/aws-az.png)
 ### Data centres
 - Each region has at least 2 data centres, means its highly available
     - If one data centre becomes unavailable there is a backup
