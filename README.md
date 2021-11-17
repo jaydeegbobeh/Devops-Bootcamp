@@ -7,3 +7,4 @@
 - [Automating Vagrant Multimachine Deployment](https://github.com/jaydeegbobeh/Devops-Bootcamp/tree/main/Automate_Vagrant_App)
 
 - [AWS](https://github.com/jaydeegbobeh/Devops-Bootcamp/tree/main/AWS)
+- [CI/CD]()
