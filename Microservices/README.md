@@ -1,4 +1,4 @@
-# Microserve
+# Microservice
 - Microservice
 Consists of a collection of small, autonomous services, each service is self-contained.
 - Advantages	
