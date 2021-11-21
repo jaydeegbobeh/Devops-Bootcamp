@@ -25,6 +25,8 @@ Consists of a collection of small, autonomous services, each service is self-con
 - **Service**: a service enables network access to a set of Pods in Kubernetes.
 - **Persistent volume claim**: a request for storage, this is met by binding the PVC to a persistent volume
 - **Deployment**: deployments represent a set of multipe, identical Pods. A Deployment runs multiple replicas of your application and automatically replaces any instances that fail or become unresponsive
+
+![](../images/k8-deployment.png)
 #### mongo-service.yml
 ```
 # This is a MongoDB service that is used by the other pods in the cluster to find and connect to MongoDB
