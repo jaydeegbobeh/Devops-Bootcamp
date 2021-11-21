@@ -60,6 +60,7 @@ spec:
 ```
 - `kubectl create -f mongo-pvc.yml`
 - `kubctl get pvc` show pvcs
+- `kubectl get pv` show persistent volumes
 #### mongo-deploy.yml
 
 ```
