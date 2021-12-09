@@ -214,7 +214,7 @@ To enable detailed monitoring for an existing instance:
     - `sudo apt-get install python3-pip -y` 
     - `alias python=python3`
 - CLI: `sudo pip install awscli`
-- `aws configure`, enter your access key, secret key, defualt region name: `eu-west-1`, default output format: `json`
+- `aws configure`, enter your access key, secret key, default region name: `eu-west-1`, default output format: `json`
 - S3 access through our IAM role/account
 - **CRUD: Create (Bucket) - Read - Update - Delete**
 - Create a bucket `aws s3 mb s3://bucket-name` OR specify region `s3 mb s3://bucket-name --region eu-west-2`
@@ -229,11 +229,11 @@ To enable detailed monitoring for an existing instance:
     - Delete bucket `aws s3 rb s3://bucket-name --recursive` OR `aws s3api delete-bucket --bucket bucket-name`
 
 ## AWS S3, Simple Storage Service
-- Storage sevice, built to store and retrieve any amount of data, anytime, anywhere on the web
+- Storage service, built to store and retrieve any amount of data, anytime, anywhere on the web
 - Bucket: container for objects stored in S3
-- Object: entities that is stored in S3 bucket, consits of object data/ metadata
+- Object: entities that is stored in S3 bucket, consists of object data/ metadata
 - Key: unique identifier for object within bucket
-- Attach a S3 sevrer to an EC2 instance so that if we ever destroy the instance all the data will be saved.
+- Attach a S3 server to an EC2 instance so that if we ever destroy the instance all the data will be saved.
 - S3 Storage classes:
     - S3 Standard- high durability, performance object storage for frequently accessed data. Delivers low latency and high throughput (rate at which something is processed). Can be used for cloud apps, mobile/gaming apps
     - S3 Glacier- secure, durable, low-cost storage class for data archiving.
@@ -257,7 +257,7 @@ To enable detailed monitoring for an existing instance:
 - eu-west-2 (London) instance
 - eu-west-3 (Paris) instance
 
-### Autoscalling group to lauch Node app
+### Autoscaling group to lauch Node app
 - Create template
 - Select provide guidance
 - Chose your AMI for node, then DB
