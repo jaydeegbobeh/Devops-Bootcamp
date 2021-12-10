@@ -41,42 +41,41 @@ def empty_bucket(bucket_name):
 
 
 
-print("S3 bucket manager")
-print("Select option:")
-print("1. Create bucket")
-print("2. Upload object to bucket")
-print("3. Download object from bucket")
-print("4. Delete all objects in bucket")
-print("5. Delete bucket")
-print("Enter exit to quit")
-while True:
-    choice = input("Enter choice(1-5): ")
+choice = 1
+while choice != 0:
+    print("S3 bucket manager")
+    print("Select option:")
+    print("1. Create bucket")
+    print("2. Upload object to bucket")
+    print("3. Download object from bucket")
+    print("4. Delete all objects in bucket")
+    print("5. Delete bucket")
+    print("Enter 0 to exit")
 
-    if choice == '1':
+    choice = int(input("Enter choice(1-5): "))
+
+    if choice == 1:
         bucket_name = input("Enter bucket name: ")
         region = input("Enter region: ")
         create_bucket(bucket_name, region)
-    if choice == '2':
+    elif choice == 2:
         bucket_name = input("Enter bucket name: ")
         file_name = input("Enter file name: ")
         object_name = file_name
         upload_to_bucket(file_name, bucket_name, object_name)
-    if choice == '3':
+    elif choice == 3:
         BUCKET_NAME = input("Enter bucket name: ")
         BUCKET_FILE_NAME = input("Enter file that you want to download: ")
         LOCAL_FILE_NAME = input ("Save file as: ")
         download_file()
-    if choice == '4':
+    elif choice == 4:
         bucket_name = input("Enter bucket name: ")
         empty_bucket(bucket_name)
-    if choice == '5':
+    elif choice == 5:
         bucket_name = input("Enter bucket: ")
         delete_bucket(bucket_name)
+    elif choice == 0:
+        print("Exiting")
 
-# bucket_name = "jaydee-bucket"
-# region = "eu-west-1"
-# BUCKET_FILE_NAME = "test.md"
-# LOCAL_FILE_NAME = "test_download.md"
-# download_file()
-# create_bucket(bucket_name, region)
-empty_bucket(bucket_name)
+
+
