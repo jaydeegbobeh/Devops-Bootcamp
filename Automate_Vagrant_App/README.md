@@ -1,4 +1,4 @@
-# Automate Multiapp Vagrant VM
+# Automate Multi-app Vagrant VM
 
 
 - create a file for nginx default on localhost
@@ -124,7 +124,7 @@ sudo systemctl restart mongod
 sudo systemctl enable mongod
 
 ```
-- set up an env var once the db is up - in provison.sh file
+- set up an env var once the db is up - in provision.sh file
 ```
 sudo echo 'export DB_HOST="mongodb://192.168.10.150:27017/posts"' >> ~/.bashrc
 ```

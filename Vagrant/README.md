@@ -7,7 +7,6 @@
 - vagrant suspend: suspend VM
 - vagrant destroy: destroys environment
 - vagrant reload: The equivalent of running a halt followed by an up.
-
 	- This command is usually required for changes made in the Vagrantfile to take effect. After making any modifications to the Vagrantfile, a reload should be called.
 - vagrant ssh: This will SSH into a running Vagrant machine and give you access to a shell.
 
@@ -25,7 +24,7 @@ config.vm.box = "ubuntu/xenial64"
 config.vm.network "private_network", ip: "192.168.10.100"
 
 # alias for private ip
-# ensure to install hostsupdater before rerunning vagrant
+# ensure to install hostsupdater before rerunning vagrant, plugin adds an entry to your /etc/hosts file on the host
 config.hostsupdater.aliases = ["development.local"]
 
 end
@@ -41,7 +40,7 @@ end
 		- systemctl status nginx
 		- sudo sytemctl start nginx
 		- sudo systemctl stop nginx
-- vagrant plugin install vagrant-hostsupdater: pluging adds an entry to /etc/hosts file on host system, need the hostname and :private network with fixed IP address
+- vagrant plugin install vagrant-hostsupdater: plugin adds an entry to /etc/hosts file on host system, need the hostname and :private network with fixed IP address
 
 
 ## Automate update, upgrade, install nginx with provision file
@@ -64,7 +63,7 @@ sudo apt-get install nginx -y
 end
 ```
 3. sudo chmod +x provision.sh
-	- change permisions to allow execution of provison.sh
+	- change permissions to allow execution of provison.sh
 4. sudo ./provision.sh
 
 ## Sync folder from OS to Vm (Vagrantfile)
@@ -118,7 +117,7 @@ end
 
 - Why is it needed? What are we planning to develop?
 - The team
-- Standardised: we selected the same Linux box close to production
+- Standardized: we selected the same Linux box close to production
 - Robust
 - Automate tasks (provisioning)
 - Portable: VM, Container (push to DockerHub)
